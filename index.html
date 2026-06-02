@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allipsa Vanani Jally | Professional Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom typing animation caret style */
+        .typing-caret::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        /* Fade-in animation class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-brand-100 selection:text-brand-900 overflow-x-hidden antialiased">
+
+    <!-- STICKY NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Name -->
+                <div class="flex-shrink-0">
+                    <a href="#hero" class="text-xl font-bold font-display tracking-tight text-slate-900 hover:text-brand-600 transition-colors">
+                        AVJ<span class="text-brand-600">.</span>
+                    </a>
+                </div>
+                <!-- Desktop Nav Tabs -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">About</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Skills</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Projects</a>
+                    <a href="#certifications" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Certifications</a>
+                    <a href="#resume-section" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Resume Review</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Contact</a>
+                </div>
+                <!-- Contact Action Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="inline-flex items-center justify-center px-4 py-2 border border-brand-600 text-sm font-medium rounded-full text-brand-600 bg-transparent hover:bg-brand-50 transition-all cursor-pointer">
+                        Hire Me
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-brand-600 hover:bg-slate-100 focus:outline-none transition-colors" aria-expanded="false">
+                        <svg class="h-6 w-6" id="menu-icon" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu, show/hide based on menu state. -->
+        <div class="hidden md:hidden bg-white/95 border-b border-slate-100 shadow-inner" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-md transition-colors mobile-link">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-md transition-colors mobile-link">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-md transition-colors mobile-link">Projects</a>
+                <a href="#certifications" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-md transition-colors mobile-link">Certifications</a>
+                <a href="#resume-section" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-md transition-colors mobile-link">Resume Review</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-brand-600 font-bold bg-brand-50/50 hover:bg-brand-50 rounded-md transition-colors mobile-link">Contact / Hire Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative bg-gradient-to-tr from-slate-100 via-white to-blue-50/30 overflow-hidden min-h-screen flex items-center pt-8">
+        <!-- Background decorative elements -->
+        <div class="absolute top-1/4 -left-32 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative py-20 lg:py-32 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Main Header Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-brand-100/50 text-brand-800 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide font-mono uppercase">
+                        <span>🚀 Class of 2026 CSIT Fresher</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-slate-900 leading-tight">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-sky-600 block sm:inline">Allipsa Vanani Jally</span>
+                    </h1>
+                    
+                    <!-- Typing subtitle -->
+                    <div class="text-lg sm:text-xl text-slate-600 font-mono h-12 flex items-center justify-center lg:justify-start">
+                        <span class="mr-2">I am an aspiring</span>
+                        <span id="typing-element" class="text-brand-600 font-bold typing-caret"></span>
+                    </div>
+                    
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        A passionate B.Tech CSIT fresher with hands-on expertise building responsive web applications, extracting data insights, and implementing structured enterprise software.
+                    </p>
+                    
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto text-center px-8 py-3.5 border border-transparent text-sm font-semibold rounded-full text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-500/10 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                            Explore Projects
+                        </a>
+                        <a href="#resume-section" class="w-full sm:w-auto text-center px-8 py-3.5 border border-slate-200 text-sm font-semibold rounded-full text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                            Review Resume
+                        </a>
+                    </div>
+                    
+                    <!-- Fast Contacts -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-8 text-xs font-mono text-slate-500 border-t border-slate-100 max-w-md mx-auto lg:mx-0">
+                        <span class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            allipsavananijally@gmail.com
+                        </span>
+                        <span class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Bhubaneswar, Odisha
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Hero Abstract Illustration Card representing Development & Analytics -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Neon glows -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-sky-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        
+                        <div class="relative bg-white rounded-2xl shadow-xl border border-slate-100 p-8 space-y-6">
+                            <!-- Visual Terminal mockup representing coding -->
+                            <div class="space-y-2 font-mono text-xs text-slate-400 bg-slate-900 rounded-lg p-4 shadow-inner text-left">
+                                <div class="flex space-x-1.5 border-b border-slate-800 pb-2 mb-2">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                                    <span class="ml-2 text-[10px] text-slate-500 font-sans">allipsa-dev.js</span>
+                                </div>
+                                <p class="text-green-400"><span class="text-slate-500">></span> const developer = new Developer();</p>
+                                <p class="text-blue-300"><span class="text-slate-500">></span> developer.name = "Allipsa";</p>
+                                <p class="text-purple-300"><span class="text-slate-500">></span> developer.getAspiration();</p>
+                                <p class="text-amber-400">"Build elegant web solutions & find actionable data trends!"</p>
+                            </div>
+                            
+                            <!-- Key Metrics Quick Highlight -->
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div class="bg-slate-50 rounded-lg p-3">
+                                    <h4 class="text-2xl font-bold font-display text-brand-600">8.50</h4>
+                                    <p class="text-[10px] uppercase tracking-wider text-slate-500 font-mono">B.Tech CGPA</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-3">
+                                    <h4 class="text-2xl font-bold font-display text-slate-800">14+</h4>
+                                    <p class="text-[10px] uppercase tracking-wider text-slate-500 font-mono">Certificates</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Highlight badges -->
+                            <div class="flex flex-wrap gap-2 justify-center pt-2">
+                                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium border border-slate-200">React.js</span>
+                                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium border border-slate-200">Java / Spring</span>
+                                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium border border-slate-200">Node / MySQL</span>
+                                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium border border-slate-200">Python / Excel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="py-24 bg-white border-t border-slate-100 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-600 text-xs font-semibold tracking-widest uppercase font-mono">Profile Summary</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900 tracking-tight">About Me</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Professional Bio text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-2xl font-bold font-display text-slate-900">
+                        Aspiring Software Engineer & Data Analyst
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        I am a B.Tech CSIT fresher with hands-on knowledge in Full Stack Web Development, Data Analytics, and Technical Support Engineering. I enjoy building responsive web applications, analyzing data to find meaningful insights, and solving technical problems efficiently.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        On the web development side, I work with HTML, CSS, JavaScript, and React for frontend, and Node.js and MySQL for backend. In data analytics, I am familiar with Python, Excel, and data visualization tools.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base font-semibold text-slate-800">
+                        I also have a strong foundation in technical troubleshooting and customer-facing support.
+                    </p>
+                    
+                    <div class="bg-slate-50 border-l-4 border-brand-500 rounded-r-lg p-5 mt-4">
+                        <p class="text-sm italic text-slate-600 font-semibold">
+                            "A self-motivated team-player with strong problem-solving and analytical thinking abilities, highly adaptable to technical shifts."
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Education & Internships Quick Grid -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Education Card -->
+                    <div class="bg-white border border-slate-100 rounded-xl shadow-sm p-6 space-y-4 hover:shadow-md transition-shadow">
+                        <div class="flex items-start">
+                            <span class="p-2.5 rounded-lg bg-brand-50 text-brand-600 mr-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                            </span>
+                            <div>
+                                <h4 class="text-xs uppercase font-mono tracking-wider text-slate-500">Education Background</h4>
+                                <h3 class="text-base font-bold text-slate-900 mt-1">GITA Autonomous College, Bhubaneswar</h3>
+                                <p class="text-sm text-slate-600 mt-1">B.Tech in Computer Science and Information Technology (CSIT)</p>
+                                <div class="flex items-center justify-between text-xs text-slate-500 font-mono mt-3 pt-3 border-t border-slate-100">
+                                    <span>📅 Nov 2022 – May 2026</span>
+                                    <span class="font-bold text-brand-700">CGPA: 8.50 / 10.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience/Internships highlights -->
+                    <div class="bg-slate-50 rounded-xl p-6 space-y-4">
+                        <h4 class="text-xs uppercase font-mono tracking-wider text-slate-500 font-semibold mb-2">Professional Internships</h4>
+                        
+                        <!-- HAL Internship -->
+                        <div class="relative border-l-2 border-brand-400 pl-4 space-y-1">
+                            <h5 class="text-sm font-bold text-slate-800">Project Intern</h5>
+                            <p class="text-xs text-slate-600 font-medium">Hindustan Aeronautics Limited (HAL)</p>
+                            <p class="text-[10px] font-mono text-slate-400">June 2024 – July 2024</p>
+                        </div>
+
+                        <!-- CodeAlpha Internship -->
+                        <div class="relative border-l-2 border-brand-400 pl-4 space-y-1 pt-2">
+                            <h5 class="text-sm font-bold text-slate-800">Full Stack Intern</h5>
+                            <p class="text-xs text-slate-600 font-medium">CodeAlpha</p>
+                            <p class="text-[10px] font-mono text-slate-400">May 2025 – June 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-24 bg-slate-50 border-t border-slate-100 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-600 text-xs font-semibold tracking-widest uppercase font-mono">Expertise Matrix</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900 tracking-tight">Technical Skills</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto rounded-full"></div>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">Grouped proficiency levels across diverse development, database, and analysis domains.</p>
+            </div>
+
+            <!-- Categories Tabs Header -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterSkills('all')" class="skill-tab active px-5 py-2.5 rounded-full text-xs font-semibold transition-all shadow-sm border border-slate-200 cursor-pointer text-white bg-brand-600" id="btn-skill-all">
+                    Show All
+                </button>
+                <button onclick="filterSkills('programming')" class="skill-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-skill-programming">
+                    Programming Languages
+                </button>
+                <button onclick="filterSkills('frontend')" class="skill-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-skill-frontend">
+                    Frontend development
+                </button>
+                <button onclick="filterSkills('backend')" class="skill-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-skill-backend">
+                    Backend & Database
+                </button>
+                <button onclick="filterSkills('tools')" class="skill-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-skill-tools">
+                    Tools & Platforms
+                </button>
+                <button onclick="filterSkills('concepts')" class="skill-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-skill-concepts">
+                    Core Concepts
+                </button>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-grid">
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="programming">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">JavaScript</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">90%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 90%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">programming</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="programming">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Java (Core)</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">85%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 85%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">programming</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="programming">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Python</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">80%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 80%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">programming</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="programming">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">SQL</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">85%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 85%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">programming</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="programming">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">C#</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">75%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 75%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">programming</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="programming">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">C</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">75%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 75%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">programming</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="frontend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">HTML5 & CSS3</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">95%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 95%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">frontend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="frontend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">ReactJS</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">88%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 88%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">frontend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="frontend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Tailwind CSS</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">90%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 90%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">frontend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="frontend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Responsive Design</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">92%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 92%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">frontend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="backend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Node.js</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">82%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 82%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">backend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="backend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Express.js</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">80%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 80%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">backend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="backend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Spring Boot</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">72%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 72%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">backend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="backend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">MySQL</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">85%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 85%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">backend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="backend">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">MongoDB</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">78%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 78%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">backend</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="tools">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Git & GitHub</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">88%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 88%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">tools</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="tools">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">MS Excel (Advanced)</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">85%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 85%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">tools</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="tools">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Tableau</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">75%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 75%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">tools</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="tools">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">VS Code & Eclipse</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">90%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 90%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">tools</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="tools">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">JupyterLab</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">80%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 80%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">tools</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="concepts">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">REST APIs</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">85%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 85%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">concepts</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="concepts">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">OOPs Concepts</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">90%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 90%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">concepts</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="concepts">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Analytical Thinking</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">92%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 92%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">concepts</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="concepts">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">Technical Troubleshooting</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">88%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 88%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">concepts</span>
+                </div>
+                
+                <div class="skill-card bg-white border border-slate-100 rounded-xl p-5 shadow-sm space-y-3 hover:translate-y-[-2px] hover:shadow-md transition-all duration-300" data-category="concepts">
+                    <div class="flex justify-between items-center">
+                        <span class="font-display font-semibold text-slate-900">WebSockets</span>
+                        <span class="text-xs font-mono font-medium text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full">75%</span>
+                    </div>
+                    <!-- Custom progress bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-brand-500 to-sky-500 h-2 rounded-full transition-all duration-1000" style="width: 75%"></div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-mono text-slate-400 block">concepts</span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-24 bg-white border-t border-slate-100 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-600 text-xs font-semibold tracking-widest uppercase font-mono">Portfolio Showroom</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900 tracking-tight">Recent Projects</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto rounded-full"></div>
+                <p class="text-slate-600 text-sm max-w-sm mx-auto">Practical systems demonstrating backends, APIs, real-time collaboration, and responsive layouts.</p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="project-card bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden hover:shadow-xl hover:translate-y-[-4px] hover:bg-white transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 sm:p-8 space-y-4">
+                        <div class="flex items-center space-x-2 text-xs font-mono text-slate-400">
+                            <span>💻 Project #1</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Collaborative Real-Time Whiteboard</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">A dynamic, multi-user web application that enables team members to draw, sketch, and collaborate concurrently on an infinite virtual canvas with instantaneous updates.</p>
+                        
+                        <!-- Mini detailed list nested -->
+                        <p class="text-slate-500 text-xs italic bg-slate-100/60 rounded p-3 border-l-2 border-brand-500 font-serif">
+                            Developed a robust, interactive whiteboard that uses WebSockets for low-latency canvas transmission. Allows multi-user drawing with dynamic cursor sync, brush size customizers, and an export canvas function. Built using a Java Spring Boot backend and structured MySQL storage for user sessions.
+                        </p>
+
+                        <!-- Tech badges -->
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                Java
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                Spring Boot
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                MySQL
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                WebSockets
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                Canvas API
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                JavaScript
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                HTML/CSS
+                            </span>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Footer Action Links -->
+                    <div class="px-6 py-4 border-t border-slate-100 bg-slate-100/50 flex justify-between items-center flex-wrap gap-2">
+                        <a href="https://github.com/allipsa-vanani-jally/collaborative-whiteboard" target="_blank" class="inline-flex items-center text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+                            <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                            Source GitHub
+                        </a>
+                        <a href="#" class="inline-flex items-center text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors">
+                            Live Demo / Play
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden hover:shadow-xl hover:translate-y-[-4px] hover:bg-white transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 sm:p-8 space-y-4">
+                        <div class="flex items-center space-x-2 text-xs font-mono text-slate-400">
+                            <span>💻 Project #2</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Simple E-Commerce Store</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">A highly responsive, production-ready e-commerce platform that offers secure user login, a real-time smart shopping cart, dynamic catalogs, and checkout capabilities.</p>
+                        
+                        <!-- Mini detailed list nested -->
+                        <p class="text-slate-500 text-xs italic bg-slate-100/60 rounded p-3 border-l-2 border-brand-500 font-serif">
+                            Created a MERN stack application with clean state managers, product search and category filters, customized dashboard tables for order tracking, and administrative interfaces. Used JSON Web Tokens (JWT) for robust secure session protection.
+                        </p>
+
+                        <!-- Tech badges -->
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                ReactJS
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                NodeJS
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                ExpressJS
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                MongoDB
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                Tailwind CSS
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                JWT
+                            </span>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Footer Action Links -->
+                    <div class="px-6 py-4 border-t border-slate-100 bg-slate-100/50 flex justify-between items-center flex-wrap gap-2">
+                        <a href="https://github.com/allipsa-vanani-jally/simple-ecommerce" target="_blank" class="inline-flex items-center text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+                            <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                            Source GitHub
+                        </a>
+                        <a href="#" class="inline-flex items-center text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors">
+                            Live Demo / Play
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden hover:shadow-xl hover:translate-y-[-4px] hover:bg-white transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 sm:p-8 space-y-4">
+                        <div class="flex items-center space-x-2 text-xs font-mono text-slate-400">
+                            <span>💻 Project #3</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Mini Social Media Platform</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">A responsive social platform allowing users to establish rich profiles, publish multi-media posts, like and comment on community feed updates, and search peer profiles.</p>
+                        
+                        <!-- Mini detailed list nested -->
+                        <p class="text-slate-500 text-xs italic bg-slate-100/60 rounded p-3 border-l-2 border-brand-500 font-serif">
+                            Developed a compact community platform supporting post uploads, dynamic updates using client polling, and profile bio customization. Built using the React context system for simple, reliable app-wide state.
+                        </p>
+
+                        <!-- Tech badges -->
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                ReactJS
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                NodeJS
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                ExpressJS
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                MongoDB
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                Responsive CSS
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                REST API
+                            </span>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Footer Action Links -->
+                    <div class="px-6 py-4 border-t border-slate-100 bg-slate-100/50 flex justify-between items-center flex-wrap gap-2">
+                        <a href="https://github.com/allipsa-vanani-jally/mini-social-media" target="_blank" class="inline-flex items-center text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+                            <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                            Source GitHub
+                        </a>
+                        <a href="#" class="inline-flex items-center text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors">
+                            Live Demo / Play
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden hover:shadow-xl hover:translate-y-[-4px] hover:bg-white transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-6 sm:p-8 space-y-4">
+                        <div class="flex items-center space-x-2 text-xs font-mono text-slate-400">
+                            <span>💻 Project #4</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold font-display text-slate-900">Java Mini Suite</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">A collection of interactive, object-oriented terminal games demonstrating robust architectural design, state machines, and proper OOP concepts.</p>
+                        
+                        <!-- Mini detailed list nested -->
+                        <p class="text-slate-500 text-xs italic bg-slate-100/60 rounded p-3 border-l-2 border-brand-500 font-serif">
+                            Designed Guess the Number, Rock-Paper-Scissors, and Tic-Tac-Toe using standard OOP design patterns (encapsulation, abstraction, inheritance, polymorphism) in Core Java. Includes comprehensive error handling for input streams.
+                        </p>
+
+                        <!-- Tech badges -->
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                Core Java
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                OOPs Principles
+                            </span>
+                            
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-semibold tracking-wider uppercase font-mono px-2.5 py-1 rounded">
+                                CLI Design
+                            </span>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Footer Action Links -->
+                    <div class="px-6 py-4 border-t border-slate-100 bg-slate-100/50 flex justify-between items-center flex-wrap gap-2">
+                        <a href="https://github.com/allipsa-vanani-jally/java-games-suite" target="_blank" class="inline-flex items-center text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+                            <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                            Source GitHub
+                        </a>
+                        <a href="#" class="inline-flex items-center text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors">
+                            Live Demo / Play
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="py-24 bg-slate-50 border-t border-slate-100 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-600 text-xs font-semibold tracking-widest uppercase font-mono">Academic Credentials</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900 tracking-tight">Certifications</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Certifications Filter Controls -->
+            <div class="flex flex-wrap justify-center gap-1.5 mb-10 max-w-2xl mx-auto">
+                <button onclick="filterCerts('all')" class="cert-tab active px-4 py-2 rounded-full text-[11px] font-bold transition-all border border-slate-300/60 shadow-sm cursor-pointer text-white bg-brand-600" id="btn-cert-all">Show All</button>
+                <button onclick="filterCerts('development')" class="cert-tab px-4 py-2 rounded-full text-[11px] font-bold bg-white border border-slate-300/60 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-cert-development">Software Development</button>
+                <button onclick="filterCerts('data')" class="cert-tab px-4 py-2 rounded-full text-[11px] font-bold bg-white border border-slate-300/60 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-cert-data">Data & Analytics</button>
+                <button onclick="filterCerts('core')" class="cert-tab px-4 py-2 rounded-full text-[11px] font-bold bg-white border border-slate-300/60 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-cert-core">Enterprise & IT Logistics</button>
+                <button onclick="filterCerts('business')" class="cert-tab px-4 py-2 rounded-full text-[11px] font-bold bg-white border border-slate-300/60 text-slate-600 hover:text-brand-600 hover:bg-slate-50 transition-all cursor-pointer" id="btn-cert-business">Professional Growth</button>
+            </div>
+
+            <!-- Certs List dynamic grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="certs-grid">
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="development">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">OOPs Concepts in Java</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Great Learning</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: development
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="development">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Master Java Visually: A Complete A-Z Bootcamp for Beginners</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Udemy</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: development
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="development">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">MERN Stack Development Certificate</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">OctaNet</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: development
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="development">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">HTML, CSS, JavaScript Bundle</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Great Learning</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: development
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="development">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Mastering C# Learn Building Games, Application, Softwares</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Udemy</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: development
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="data">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Data Analytics With Specialisation in Tableau Workshop</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Jobaaj Learnings</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: data
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="data">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Microsoft Office: Excel, Word, PowerPoint and Teams for Pro</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Udemy</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: data
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="core">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">ServiceNow IT Operations Management</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Infosys Springboard</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: core
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="core">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Foundations of Cyber Security Certificate</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Coursera (Google)</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: core
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="core">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Introduction to Industry 4.0 and IIoT</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">NPTEL</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: core
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="business">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Master Course: Inclusive Product Development & Design 2.0</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Udemy</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: business
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="business">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">The Complete Digital Marketing Guide for Beginners</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Udemy</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: business
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="business">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Master Course: Selling Into the Manufacturing Industry 2.0</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Udemy</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: business
+                    </div>
+                </div>
+                
+                <div class="cert-card bg-white border border-slate-150 rounded-xl p-5 shadow-sm space-y-3 relative hover:shadow-md hover:border-brand-100 transition-all duration-300" data-category="business">
+                    <div class="absolute -top-3 left-4 bg-brand-50 text-brand-700 text-[9px] font-bold uppercase tracking-wider font-mono px-2 py-0.5 rounded-full border border-brand-100">
+                        🎓 Verification Passed
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <h3 class="text-sm font-bold text-slate-800 leading-snug line-clamp-2 hover:line-clamp-none transition-all">Human Resource Skills Workshop Certificate</h3>
+                        <p class="text-xs text-brand-600 font-mono font-medium">Tareeqat Global Solution Pvt. Ltd.</p>
+                    </div>
+                    <div class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest font-mono pt-2 border-t border-slate-50">
+                        Category: business
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- RESUME REVIEW SECTION -->
+    <section id="resume-section" class="py-24 bg-white border-t border-slate-100 reveal">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-600 text-xs font-semibold tracking-widest uppercase font-mono">Resume Review Board</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900 tracking-tight">Interactive Resume Review</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto rounded-full"></div>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">Toggle and review the custom targeted resumes drafted for specialized roles (Software Development or Data Analytics).</p>
+            </div>
+
+            <!-- Resume Toggle Tabs -->
+            <div class="bg-slate-100 p-1.5 rounded-xl max-w-md mx-auto flex justify-between gap-1 mb-8 shadow-inner border border-slate-200">
+                <button onclick="toggleResume('dev')" class="resume-tab flex-1 py-3 text-xs font-bold rounded-lg text-slate-700 bg-white shadow transition-all cursor-pointer" id="btn-resume-dev">
+                    💻 Web / Full Stack Resume
+                </button>
+                <button onclick="toggleResume('analytic')" class="resume-tab flex-1 py-3 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer" id="btn-resume-analytic">
+                    📊 Data Analyst Resume
+                </button>
+            </div>
+
+            <!-- Resume Render Canvas -->
+            <div class="bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden p-6 sm:p-10 font-sans " id="resume-canvas">
+                <!-- Resume Header Details -->
+                <div class="text-center border-b border-slate-200 pb-10 space-y-3">
+                    <h1 class="text-3xl sm:text-4xl font-bold font-display text-slate-900 uppercase tracking-wide tracking-tight">Allipsa Vanani Jally</h1>
+                    <p class="text-slate-600 font-mono text-sm max-w-md mx-auto">
+                        Bhubaneswar, Odisha · +91 6370599229 · allipsavananijally@gmail.com
+                    </p>
+                    <div class="flex items-center justify-center space-x-6 text-xs text-brand-600 font-mono">
+                        <a href="https://www.linkedin.com/in/allipsa-vanani-jally" target="_blank" class="hover:underline flex items-center">
+                            <span class="mr-1.5">🔗</span> LinkedIn Profile
+                        </a>
+                        <a href="#contact" class="hover:underline flex items-center">
+                            <span class="mr-1.5">📧</span> Request Recommendation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Live Dynamic Summary Card -->
+                <div class="py-8 border-b border-slate-200 space-y-3">
+                    <h3 class="text-sm uppercase tracking-widest font-mono text-brand-700 font-bold">I. Summary Objective</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed" id="resume-summary-text">
+                        Enthusiastic Full Stack Developer proficient in HTML, CSS, ReactJS, Node.js, Java, and SQL. Experienced in responsive frontend development, scalable web applications, and full-stack projects through internships and academic work. Strong understanding of ReactJS, REST APIs, UI design, and modern web technologies.
+                    </p>
+                </div>
+
+                <!-- Education Details -->
+                <div class="py-8 border-b border-slate-200 space-y-4">
+                    <h3 class="text-sm uppercase tracking-widest font-mono text-brand-700 font-bold">II. Academic Education</h3>
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-2">
+                        <div>
+                            <h4 class="text-base font-bold text-slate-900">GITA Autonomous College, Bhubaneswar</h4>
+                            <p class="text-xs text-slate-600 font-medium">B.Tech in Computer Science and Information Technology (CSIT)</p>
+                        </div>
+                        <div class="text-right sm:text-right text-xs text-slate-500 font-mono">
+                            <p class="font-bold text-slate-700">📅 Nov 2022 – May 2026</p>
+                            <p class="text-brand-700 font-semibold mt-0.5">CGPA: 8.50 / 10.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills inside resume -->
+                <div class="py-8 border-b border-slate-200 space-y-3">
+                    <h3 class="text-sm uppercase tracking-widest font-mono text-brand-700 font-bold">III. Featured Skills Inventory</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs" id="resume-skills-block">
+                        <!-- Filled by helper JS dynamically -->
+                    </div>
+                </div>
+
+                <!-- Experience Block inside resume -->
+                <div class="py-8 border-b border-slate-200 space-y-6">
+                    <h3 class="text-sm uppercase tracking-widest font-mono text-brand-700 font-bold">IV. Internship Engagements</h3>
+                    
+                    <div class="space-y-2">
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-1">
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Hindustan Aeronautics Limited (HAL)</h4>
+                                <p class="text-xs font-semibold text-brand-600 font-serif">Project Intern</p>
+                            </div>
+                            <span class="text-xs text-slate-500 font-mono bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-full">June 2024 – July 2024</span>
+                        </div>
+                        <ul class="list-disc list-inside text-xs text-slate-600 space-y-1.5 leading-relaxed">
+                            <li>Worked on expanding the "ImagingZ" website, a full-stack photo editing and enhancement platform.</li><li>Developed and optimized responsive user interface elements using React.js and Tailwind CSS.</li><li>Integrated backend features using Node.js, and configured cloud storage systems for secure image storage.</li><li>Implemented real-time filters, AI-driven enhancements, and responsive gallery view functionalities.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-1">
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">CodeAlpha</h4>
+                                <p class="text-xs font-semibold text-brand-600 font-serif">Full Stack Web Development Intern</p>
+                            </div>
+                            <span class="text-xs text-slate-500 font-mono bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-full">May 2025 – June 2025</span>
+                        </div>
+                        <ul class="list-disc list-inside text-xs text-slate-600 space-y-1.5 leading-relaxed">
+                            <li>Built and deployed clean, modern MERN stack applications including an E-Commerce system and a Social Media app.</li><li>Designed responsive frontend interfaces with ReactJS, ensuring cross-device compatibility.</li><li>Created structured REST APIs on Express.js and managed database integration using MongoDB and MySQL.</li><li>Implemented JWT authentication, cookie state storage, and dynamic dashboard views.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+                <!-- Projects list inside resume -->
+                <div class="py-8 pb-4 space-y-5">
+                    <h3 class="text-sm uppercase tracking-widest font-mono text-brand-700 font-bold">V. Core Engineering Projects</h3>
+                    
+                    <div class="space-y-1">
+                        <div class="flex justify-between items-baseline flex-wrap gap-2">
+                            <h4 class="text-sm font-bold text-slate-900">Collaborative Real-Time Whiteboard</h4>
+                            <span class="text-[10px] font-mono font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Java, Spring Boot, MySQL, WebSockets, Canvas API, JavaScript, HTML/CSS</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Developed a robust, interactive whiteboard that uses WebSockets for low-latency canvas transmission. Allows multi-user drawing with dynamic cursor sync, brush size customizers, and an export canvas function. Built using a Java Spring Boot backend and structured MySQL storage for user sessions.</p>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <div class="flex justify-between items-baseline flex-wrap gap-2">
+                            <h4 class="text-sm font-bold text-slate-900">Simple E-Commerce Store</h4>
+                            <span class="text-[10px] font-mono font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">ReactJS, NodeJS, ExpressJS, MongoDB, Tailwind CSS, JWT</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Created a MERN stack application with clean state managers, product search and category filters, customized dashboard tables for order tracking, and administrative interfaces. Used JSON Web Tokens (JWT) for robust secure session protection.</p>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <div class="flex justify-between items-baseline flex-wrap gap-2">
+                            <h4 class="text-sm font-bold text-slate-900">Mini Social Media Platform</h4>
+                            <span class="text-[10px] font-mono font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">ReactJS, NodeJS, ExpressJS, MongoDB, Responsive CSS, REST API</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Developed a compact community platform supporting post uploads, dynamic updates using client polling, and profile bio customization. Built using the React context system for simple, reliable app-wide state.</p>
+                    </div>
+                    
+                </div>
+                
+                <!-- Action bar for resume printing -->
+                <div class="border-t border-slate-100 pt-6 mt-6 flex justify-end">
+                    <button onclick="window.print()" class="inline-flex items-center text-xs font-bold text-slate-600 hover:text-brand-600 cursor-pointer">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        Print Resume Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-slate-50 border-t border-slate-100 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-600 text-xs font-semibold tracking-widest uppercase font-mono">Let's Connect</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-display text-slate-900 tracking-tight">Contact</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto">
+                
+                <!-- Contact info cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-2xl font-bold font-display text-slate-900">Get in Touch</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        I am currently seeking internship or entry-level opportunities in Software Development, Full Stack Web Engineering, Data Analytics, or IT Technical Support. Drop an email, ping me on LinkedIn, or schedule an interview audit!
+                    </p>
+
+                    <!-- Profile metrics cards -->
+                    <div class="space-y-4 font-sans pt-4">
+                        <!-- Mail -->
+                        <div class="flex items-center p-4 bg-white rounded-xl border border-slate-200">
+                            <span class="p-2.5 rounded-lg bg-brand-50 text-brand-600 mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </span>
+                            <div>
+                                <h4 class="text-[10px] uppercase font-mono tracking-wider text-slate-400">Email Direct</h4>
+                                <a href="mailto:allipsavananijally@gmail.com" class="text-sm font-bold text-slate-800 hover:text-brand-600 break-all">allipsavananijally@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="flex items-center p-4 bg-white rounded-xl border border-slate-200">
+                            <span class="p-2.5 rounded-lg bg-blue-50 text-blue-600 mr-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </span>
+                            <div>
+                                <h4 class="text-[10px] uppercase font-mono tracking-wider text-slate-400">Professional Network</h4>
+                                <a href="https://www.linkedin.com/in/allipsa-vanani-jally" target="_blank" class="text-sm font-bold text-slate-800 hover:text-brand-600">Allipsa Vanani Jally</a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-center p-4 bg-white rounded-xl border border-slate-200">
+                            <span class="p-2.5 rounded-lg bg-indigo-50 text-indigo-600 mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </span>
+                            <div>
+                                <h4 class="text-[10px] uppercase font-mono tracking-wider text-slate-400">Current Base</h4>
+                                <p class="text-sm font-bold text-slate-800">Bhubaneswar, Odisha, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form & Recruiter Message -->
+                <div class="lg:col-span-7 bg-white rounded-2xl shadow-md border border-slate-100 p-6 sm:p-8">
+                    <h3 class="text-xl font-bold font-display text-slate-900 mb-6">Send a Quick Message</h3>
+                    
+                    <form onsubmit="handleFormSubmission(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-mono font-medium text-slate-500 uppercase">Your Name</label>
+                                <input type="text" required placeholder="Guest / Recruiter" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-mono font-medium text-slate-500 uppercase">Your Email</label>
+                                <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-mono font-medium text-slate-500 uppercase">Subject</label>
+                            <input type="text" required placeholder="Interview / Internship Opportunity" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-mono font-medium text-slate-500 uppercase">Message</label>
+                            <textarea required rows="4" placeholder="Hello Allipsa, I came across your portfolio website and am interested in scheduling a interview..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-brand-500 transition-colors"></textarea>
+                        </div>
+                        
+                        <div class="pt-2">
+                            <button type="submit" class="w-full px-6 py-3.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                                Dispatch message via client
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="hidden id-alert mt-4 bg-green-50 border border-green-200 text-green-800 text-xs rounded-lg p-4 font-mono text-center" id="form-alert">
+                         🎉 Message logged! Since this is a static showcase, it has triggered your local mail client! Feel free to ping directly via the social email handle.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 font-sans">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-slate-800 pb-8 mb-8">
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-bold font-display text-white">Allipsa Vanani Jally</h3>
+                    <p class="text-xs mt-1 text-slate-500">GITA Autonomous College Graduate · Class of 2026</p>
+                </div>
+                
+                <!-- Quick social icons links -->
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/allipsa-vanani-jally" target="_blank" class="hover:text-brand-405 hover:underline transition-colors text-xs font-mono">LinkedIn</a>
+                    <a href="mailto:allipsavananijally@gmail.com" class="hover:text-brand-405 hover:underline transition-colors text-xs font-mono">Email Address</a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Allipsa Vanani Jally. All rights reserved.</p>
+                <p class="font-mono text-[10px]">Built with Pure HTML, Tailwind CSS, & Vanilla JS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- RESPONSIVE JAVASCRIPT FOR USER INTERACTIONS -->
+    <script>
+        // TYPING ANIMATION EFFECT FOR HERO SECTION
+        const textOptions = ["Full Stack Web Developer", "Data Analyst", "Technical Support Engineer", "Problem Solver"];
+        let currentWordIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100; // time in ms
+        const deletingSpeed = 50; 
+        const pauseTime = 1500; 
+        
+        function type() {
+            const typingElement = document.getElementById('typing-element');
+            if(!typingElement) return;
+            
+            const currentFullWord = textOptions[currentWordIndex];
+            
+            if (!isDeleting) {
+                // Typing letters
+                typingElement.textContent = currentFullWord.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+                
+                if (currentCharIndex === currentFullWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, pauseTime);
+                } else {
+                    setTimeout(type, typingSpeed);
+                }
+            } else {
+                // Deleting letters
+                typingElement.textContent = currentFullWord.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                
+                if (currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentWordIndex = (currentWordIndex + 1) % textOptions.length;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(type, deletingSpeed);
+                }
+            }
+        }
+        
+        // Start typing after DOM loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(type, 500);
+            
+            // Trigger skills render on resume canvas early
+            toggleResume('dev');
+            
+            // Scroll animations active on load
+            reveal();
+        });
+
+        // STICKY MOBILE NAVIGATION TRIGGER
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile nav when link clicked
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ACTIVE SCROLL REVEAL ANIMATIONS
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        // DYNAMIC FILTER FOR TECH SKILLS
+        function filterSkills(category) {
+            // Update active state in buttons
+            const tabs = document.querySelectorAll('.skill-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-brand-600', 'text-white');
+                tab.classList.add('bg-white', 'text-slate-600');
+            });
+            
+            const activeTab = document.getElementById('btn-skill-' + category);
+            if(activeTab) {
+                activeTab.classList.remove('bg-white', 'text-slate-600');
+                activeTab.classList.add('bg-brand-600', 'text-white');
+            }
+
+            // Filter actual cards
+            const cards = document.querySelectorAll('.skill-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // DYNAMIC FILTER FOR CERTIFICATIONS
+        function filterCerts(category) {
+            // Update active state in tabs
+            const tabs = document.querySelectorAll('.cert-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-brand-600', 'text-white');
+                tab.classList.add('bg-white', 'text-slate-600');
+            });
+
+            const activeTab = document.getElementById('btn-cert-' + category);
+            if (activeTab) {
+                activeTab.classList.remove('bg-white', 'text-slate-600');
+                activeTab.classList.add('bg-brand-600', 'text-white');
+            }
+
+            // Filter cert elements
+            const cards = document.querySelectorAll('.cert-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // DYNAMIC RESUME SHOWER (Web Dev Resume vs Data Analyst Resume)
+        const resumeSkills = {
+            dev: [
+                { name: 'JavaScript / HTML / CSS3', level: 'Expert Level' },
+                { name: 'ReactJS / Responsive Layouts', level: 'Advanced' },
+                { name: 'Node.js / Express / REST APIs', level: 'Intermediate / Active' },
+                { name: 'Core Java / OOPs Architectures', level: 'Advanced' },
+                { name: 'MySQL / JDBC / WebSockets', level: 'Comfortable' }
+            ],
+            analytic: [
+                { name: 'Python (Pandas, Numpy)', level: 'Advanced' },
+                { name: 'SQL Query Processing & Subqueries', level: 'Advanced' },
+                { name: 'MS Excel (Pivot, VLOOKUP, TRIM)', level: 'Expert level' },
+                { name: 'Tableau Dashboards', level: 'Intermediate / Active' },
+                { name: 'Cyber Security Basics', level: 'Certified' }
+            ]
+        };
+
+        function toggleResume(type) {
+            const btnDev = document.getElementById('btn-resume-dev');
+            const btnAnalytic = document.getElementById('btn-resume-analytic');
+            const summaryText = document.getElementById('resume-summary-text');
+            const skillsBlock = document.getElementById('resume-skills-block');
+
+            if (type === 'dev') {
+                // Change classes
+                btnDev.className = 'resume-tab flex-1 py-3 text-xs font-bold rounded-lg text-slate-705 bg-white shadow border border-slate-200 cursor-pointer';
+                btnAnalytic.className = 'resume-tab flex-1 py-3 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer bg-transparent border-0';
+                
+                // Change key contents
+                summaryText.textContent = "Enthusiastic Full Stack Developer proficient in HTML, CSS, ReactJS, Node.js, Java, and SQL. Experienced in responsive frontend development, scalable web applications, and full-stack projects through internships and academic work. Strong understanding of ReactJS, REST APIs, UI design, and modern web technologies.";
+                
+                // Draw skills list
+                skillsBlock.innerHTML = resumeSkills.dev.map(sk => `
+                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                        <span class="font-bold text-slate-800">${sk.name}</span>
+                        <span class="font-mono text-brand-600 font-semibold text-[10px] bg-brand-50 px-2 py-0.5 rounded-full">${sk.level}</span>
+                    </div>
+                `).join('');
+            } else {
+                // Change classes
+                btnAnalytic.className = 'resume-tab flex-1 py-3 text-xs font-bold rounded-lg text-slate-705 bg-white shadow border border-slate-200 cursor-pointer';
+                btnDev.className = 'resume-tab flex-1 py-3 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer bg-transparent border-0';
+                
+                // Change key contents
+                summaryText.textContent = "Motivated and detail-oriented aspiring Data Analyst with a strong engineering foundation in Python, SQL, Excel, and analytical problem-solving. Skilled in transforming raw data into meaningful insights using logical reasoning and data-driven approaches. Passionate about data analytics, visualization, and business intelligence with the ability to work effectively both independently and in team environments.";
+                
+                // Draw skills list
+                skillsBlock.innerHTML = resumeSkills.analytic.map(sk => `
+                    <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                        <span class="font-bold text-slate-800">${sk.name}</span>
+                        <span class="font-mono text-brand-600 font-semibold text-[10px] bg-brand-50 px-2 py-0.5 rounded-full">${sk.level}</span>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // SUBMISSION ALERTER MOCKUP
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('form-alert');
+            alertBox.classList.remove('hidden');
+            
+            // clear form
+            event.target.reset();
+            
+            // Scroll down a bit to alertbox
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
